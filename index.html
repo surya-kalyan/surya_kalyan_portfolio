@@ -13,30 +13,23 @@
         }
         
         /* Base Styles */
-        body {copy ..\surya_pfp.jpg public\
-        copy ..\portfolio\surya_3.jpg public\
-copy ..\surya_pfp.jpg public\
-copy ..\portfolio\surya_3.jpg public\
-copy ..\surya_pfp.jpg public\
-copy ..\portfolio\surya_3.jpg public\
-copy ..\surya_pfp.jpg public\
-copy ..\portfolio\surya_3.jpg public\
-
-            font-family: Arial, Helvetica, sans-serif;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #ffffff;
             background-color: #151515;
+            scroll-behavior: smooth;
         }
         
         .container {
-            width: 85%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
         h1, h2, h3, h4 {
@@ -150,17 +143,40 @@ copy ..\portfolio\surya_3.jpg public\
         /* Hero Section */
         .hero {
             padding: 80px 0;
+        }
+        
+        .hero .container {
             display: flex;
             align-items: center;
+            gap: 60px;
         }
         
         .hero-content {
             flex: 1;
+            max-width: 600px;
         }
         
         .hero-image {
-            flex: 1;
-            text-align: center;
+            flex: 0 0 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border: 4px solid rgba(255, 0, 89, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 0, 89, 0.3);
         }
         
         .profile-image {
@@ -185,9 +201,10 @@ copy ..\portfolio\surya_3.jpg public\
         }
         
         .hero-title {
-            font-size: 42px;
+            font-size: 48px;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
         
         .hero-title span {
@@ -195,39 +212,48 @@ copy ..\portfolio\surya_3.jpg public\
         }
         
         .hero-description {
-            color: #bbbbbb;
-            margin-bottom: 30px;
+            color: #cccccc;
+            margin-bottom: 35px;
             max-width: 600px;
-            font-size: 18px;
+            font-size: 19px;
+            line-height: 1.7;
         }
         
         /* Buttons */
         .primary-btn {
             background-color: #ff0059;
             color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: bold;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
             display: inline-block;
-            margin-right: 15px;
-            transition: background-color 0.3s;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 89, 0.3);
+            font-size: 16px;
         }
         
         .primary-btn:hover {
             background-color: #d80048;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 89, 0.4);
         }
         
         .secondary-btn {
             border: 2px solid #ff0059;
             color: white;
-            padding: 10px 30px;
-            border-radius: 5px;
+            padding: 13px 35px;
+            border-radius: 8px;
             display: inline-block;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 16px;
         }
         
         .secondary-btn:hover {
             background-color: #ff0059;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 89, 0.3);
         }
         
         /* About Section */
@@ -263,9 +289,10 @@ copy ..\portfolio\surya_3.jpg public\
         }
         
         .section-title {
-            font-size: 32px;
+            font-size: 36px;
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            font-weight: 700;
         }
         
         .section-title::after {
@@ -279,8 +306,10 @@ copy ..\portfolio\surya_3.jpg public\
         }
         
         .about-text {
-            color: #bbbbbb;
-            margin-bottom: 20px;
+            color: #cccccc;
+            margin-bottom: 25px;
+            font-size: 17px;
+            line-height: 1.7;
         }
         
         /* Experience Section */
@@ -349,14 +378,17 @@ copy ..\portfolio\surya_3.jpg public\
         
         .skill-category {
             background-color: #1a1a1a;
-            border-radius: 8px;
-            padding: 25px 20px;
+            border-radius: 12px;
+            padding: 30px 25px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .skill-category:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 0, 89, 0.3);
         }
         
         .skill-icon {
@@ -395,13 +427,16 @@ copy ..\portfolio\surya_3.jpg public\
         
         .project-card {
             background-color: #2a2a2a;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 89, 0.3);
         }
         
         .project-image {
@@ -524,8 +559,9 @@ copy ..\portfolio\surya_3.jpg public\
             max-width: 800px;
             margin: 50px auto 0;
             background-color: #1a1a1a;
-            border-radius: 8px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .form-group {
@@ -554,51 +590,92 @@ copy ..\portfolio\surya_3.jpg public\
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(255, 0, 89, 0.1);
         }
         
         .contact-icon {
-            margin-right: 15px;
-            width: 40px;
-            height: 40px;
-            background-color: #2a2a2a;
+            margin-right: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #ff0059;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 18px;
+        }
+        
+        /* Hero Name Tag */
+        .hero-name-tag {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .hero-name-tag h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff0059;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .hero-name-tag p {
+            font-size: 16px;
+            color: #bbbbbb;
+            font-weight: 400;
+            margin: 0;
+            font-style: italic;
         }
         
         /* Footer */
         footer {
             background-color: #1a1a1a;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
+            border-top: 1px solid #333;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            gap: 20px;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: #2a2a2a;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 10px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
         
         .social-link:hover {
             background-color: #ff0059;
+            transform: translateY(-3px);
+        }
+        
+        .social-link img {
+            width: 20px;
+            height: 20px;
         }
         
         .footer-text {
             color: #bbbbbb;
+            font-size: 14px;
+            margin: 0;
         }
         
         /* Responsive Design */
@@ -628,13 +705,19 @@ copy ..\portfolio\surya_3.jpg public\
                 margin: 15px 0;
             }
             
-            .hero, .about-container {
+            .hero .container, .about-container {
                 flex-direction: column;
                 text-align: center;
+                gap: 40px;
             }
             
             .hero-image {
+                flex: none;
                 margin-top: 40px;
+            }
+            
+            .hero-content {
+                max-width: none;
             }
             
             .about-image {
@@ -699,9 +782,11 @@ copy ..\portfolio\surya_3.jpg public\
             </div>
             
             <div class="hero-image">
-                <img src="C:\Users\Admin\OneDrive\Documents\certificate\main_resume_updated\surya_pfp.jpg" alt="Surya Kalyan B" style="width:300px; height:300px; object-fit:cover; border-radius:50%; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-               
-                <div style="font-size: larger; align-items: center; margin-top: 20px;color:#d80048;"><h3><nav>SURYA KALYAN B</nav></h3></div>
+                <img src="image\surya_4.jpg" alt="Surya Kalyan B">
+                <div class="hero-name-tag">
+                    <h3>SURYA KALYAN B</h3>
+                    <p>AI Developer & Data Scientist</p>
+                </div>
             </div>
         </div>
     </section>
@@ -711,7 +796,7 @@ copy ..\portfolio\surya_3.jpg public\
         <div class="container">
             <div class="about-container">
                 <div class="about-image">
-                    <img src="C:\Users\Admin\OneDrive\Documents\certificate\main_resume_updated\portfolio\surya_3.jpg" alt="Surya Kalyan B" style="width:100%; height:500px; object-fit:cover; border-radius:10px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                    <img src="image\surya_3.jpg" alt="Surya Kalyan B" style="width:100%; height:500px; object-fit:cover; border-radius:10px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
                 </div>
                 
                 <div class="about-content">
@@ -998,9 +1083,15 @@ copy ..\portfolio\surya_3.jpg public\
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/surya-kalyan-b-dsa" class="social-link" target="_blank"><img src="linkedin.png" sizes="2px"></a>
-                <a href="https://github.com/surya-kalyan" class="social-link" target="_blank"><img src="github logo.png" sizes="2px"></a>
-                <a href="https://www.instagram.com/suryaa__kalyan/" class="social-link" target="_blank"><img src="instagram logo.jpeg" sizes="2px"></a>
+                <a href="https://www.linkedin.com/in/surya-kalyan-b-dsa" class="social-link" target="_blank">
+                    <img src="image\linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/surya-kalyan" class="social-link" target="_blank">
+                    <img src="image\github logo.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/suryaa__kalyan/" class="social-link" target="_blank">
+                    <img src="image\instagram logo.jpeg" alt="Instagram">
+                </a>
             </div>
             
             <p class="footer-text">&copy; 2025 Surya Kalyan B. All rights reserved.</p>
